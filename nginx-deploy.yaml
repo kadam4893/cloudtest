@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cloudtest
+  name: cloudtest-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudtest
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cloudtest
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
